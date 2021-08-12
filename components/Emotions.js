@@ -9,7 +9,7 @@ export default function Emotions(props){
             <img
               width = "100"
               height = "100"
-              src = {"/emojis/"+props.emotion+".svg"}
+              src = {"/emojis/"+props.emotion+".SVG"}
             />
           </div>
           <img 
