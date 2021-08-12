@@ -1,0 +1,61 @@
+
+.imageCont{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+}
+
+.imageCont .image{
+	display: block;
+	position: relative;
+	max-width: 65vw;
+	max-height: 65vh;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	z-index: 1;
+	border: 5px dashed #000000;
+}
+
+.imageCont .emoji{
+	position: absolute;
+	right: -25px;
+	top: -25px;
+	z-index: 2;
+}
+
+.emotion{
+	display: block;
+	font-size: 1.5rem;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.angry{
+	color: red;
+}
+
+.happy{
+	color: yellow;
+}
+
+.netural{
+	color: green;
+}
+
+.disgust{
+	color: orange;
+}
+
+.surprised{
+	color: transparent;
+	background-image: linear-gradient(145deg,yellow,#ff5c00);
+	background-clip: text;
+}
+
+.sad{
+	color: darkblue;
+}
+
+.reset{
+	margin-top: 20px;
+}

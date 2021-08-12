@@ -1,0 +1,25 @@
+:root{
+	--fontFamily: 'Poppins', sans-serif;
+	--primaryColor: #000000;
+	--secondaryColor: #afafaf;
+	--txtColor: #ffffff;
+	--linkColor: blue;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #fafafa;
+  font-family: var(--fontFamily);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}

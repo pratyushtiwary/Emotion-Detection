@@ -1,0 +1,41 @@
+.snackbar{
+	position: fixed;
+	top: 10px;
+	right: -100%;
+	padding: 10px;
+	box-shadow: 0 0 10px rgba(0,0,0,0.5);
+	border-radius: 2.5px;
+	background: rgba(0,0,0,0.75);
+	font-family: var(--fontFamily);
+	transition: 0.25s ease-in-out;
+	width: fit-content;
+	z-index: 999;
+}
+
+.snackbar.show{
+	right: 50px;
+}
+
+.snackbar .content{
+	position: relative;
+	left: 50%;
+	transform: translate(-50%);
+	width: fit-content;
+	text-align: center;
+	color: var(--txtColor);
+}
+
+@media screen and (max-width: 700px){
+	.snackbar{
+		top: auto;
+		right: auto;
+		bottom: -100%;
+		min-width: 50%;
+		left: 50%;
+		transform: translate(-50%);
+	}
+	.snackbar.show{
+		right: auto;
+		bottom: 10px;
+	}
+}
