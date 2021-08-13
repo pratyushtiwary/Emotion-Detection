@@ -24,23 +24,25 @@ function Recaptcha(props){
 		const cont = recapElem.current;
 		let widgetId;
 		if(window.grecaptcha){
-			function done(){
-				recaptcha.hide();
-				recaptcha.onVerified && recaptcha.onVerified();
-				window.grecaptcha.reset();
-			}
-			function eError(){
-				window.grecaptcha.reset();
-			}
-			function error(){
-				eError();
-			}
-			window.grecaptcha.render(cont,{
-				"sitekey": "6LcaOPkbAAAAAENOCJCxrlSXoh5b8MWvEyZxh0NX",
-				"callback": done,
-				"expired-callback": eError,
-				"error-callback": error
-			});
+			window.grecaptcha.ready(()=>{
+				function done(){
+					recaptcha.hide();
+					recaptcha.onVerified && recaptcha.onVerified();
+					window.grecaptcha.reset();
+				}
+				function eError(){
+					window.grecaptcha.reset();
+				}
+				function error(){
+					eError();
+				}
+				window.grecaptcha.render(cont,{
+					"sitekey": "6LcaOPkbAAAAAENOCJCxrlSXoh5b8MWvEyZxh0NX",
+					"callback": done,
+					"expired-callback": eError,
+					"error-callback": error
+				});
+			})
 		}
 	},[])
 
