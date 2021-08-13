@@ -3,6 +3,9 @@ import Head from "next/head";
 import Uploader from "../components/Uploader";
 import Emotions from "../components/Emotions";
 import { useState, useEffect } from "react";
+import recap from "../components/Recaptcha";
+import Loader from "../components/Loader";
+
 
 export default function Home(props) {
   
@@ -13,6 +16,7 @@ export default function Home(props) {
     let b = new Blob([file]);
     b = window.URL.createObjectURL(b);
     let index = Math.floor((Math.random() * emotions.length) % emotions.length);
+    recap.recaptcha.show();
     function reset(){
       setContent((
         <Uploader
@@ -21,13 +25,21 @@ export default function Home(props) {
         />
       ));
     }
-    setContent((
-      <Emotions
-        url={b}
-        emotion={emotions[index]}
-        onReset = {reset}
-      />
-    ))
+    recap.recaptcha.onVerified = ()=>{
+        recap.recaptcha.hide();
+        Loader.show("Detecting...");
+        setTimeout(()=>{
+          Loader.hide();
+          setContent((
+            <Emotions
+              url={b}
+              emotion={emotions[index]}
+              onReset = {reset}
+            />
+          ))
+        },3000);
+    }
+    
   }
 
   useEffect(()=>{
@@ -45,6 +57,7 @@ export default function Home(props) {
       <Head>
         <title>{props.appName}</title>
       </Head>
+      <recap.Recaptcha/>
       <div className={styles.cont}>
         {content}
       </div>
