@@ -8,7 +8,7 @@ import Loader from "../components/Loader";
 import axios from "axios";
 import snackbar from "../components/Snackbar";
 
-const url = "https://dry-escarpment-33044.herokuapp.com/";
+const url = "https://emotiondetection.pythonanywhere.com/";
 
 export default function Home(props) {
   
@@ -28,7 +28,7 @@ export default function Home(props) {
           <h1 className={styles.title}>{props.appName}</h1>
           <h2 className={styles.pitch}>Recognise Your Emotions!</h2>
           <Uploader
-            maxSize = {1}
+            maxSize = {5}
             onUpload = {upload}
             accept = ".jpeg,.jpg,.png"
           />
@@ -82,7 +82,7 @@ export default function Home(props) {
         <h1 className={styles.title}>{props.appName}</h1>
         <h2 className={styles.pitch}>Recognise Your Emotions!</h2>
         <Uploader
-          maxSize = {1}
+          maxSize = {5}
           onUpload = {upload}
           accept = ".jpeg,.jpg,.png"
         />
