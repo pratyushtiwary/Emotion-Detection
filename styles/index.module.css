@@ -19,6 +19,7 @@
 .cont .main .pitch{
 	color: var(--txtColor);
 	margin-bottom: 10px;
+	text-align: center;
 }
 
 .cont .side{
