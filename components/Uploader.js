@@ -30,7 +30,7 @@ export default function Uploader(props){
 		<>
 			<input 
 	          type="file"
-	          accept = "image/*"
+	          accept = {props.accept}
 	          className = {styles.uploadInput}
 	          ref = {input}
 	          onChange = {onChange}

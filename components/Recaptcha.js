@@ -43,7 +43,7 @@ function Recaptcha(props){
 						eError();
 					}
 					window.grecaptcha.render(cont,{
-						"sitekey": "6LcaOPkbAAAAAENOCJCxrlSXoh5b8MWvEyZxh0NX",
+						"sitekey": props.siteKey,
 						"callback": done,
 						"expired-callback": eError,
 						"error-callback": error
@@ -57,7 +57,7 @@ function Recaptcha(props){
 			window.location.reload();
 		}
 		
-	},[])
+	},[props.siteKey])
 
 	return (
 		<div className={styles.recapCont}>

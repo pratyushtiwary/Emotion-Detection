@@ -27,6 +27,7 @@ export default function Home(props) {
         <Uploader
           maxSize = {5}
           onUpload = {upload}
+          accept = "image/*"
         />
       ));
     }
@@ -76,6 +77,7 @@ export default function Home(props) {
       <Uploader
         maxSize = {5}
         onUpload = {upload}
+        accept = "image/*"
       />
     ));
   },[])
@@ -86,7 +88,7 @@ export default function Home(props) {
       <Head>
         <title>{props.appName}</title>
       </Head>
-      <recap.Recaptcha/>
+      <recap.Recaptcha siteKey={"6LcaOPkbAAAAAENOCJCxrlSXoh5b8MWvEyZxh0NX"}/>
       <div className={styles.cont}>
         {content}
       </div>
