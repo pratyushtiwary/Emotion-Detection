@@ -18,7 +18,8 @@
 
 .cont .main .pitch{
 	color: var(--txtColor);
-	margin-bottom: 10px;
+	margin-top: 5px;
+	margin-bottom: 15px;
 	text-align: center;
 }
 
@@ -30,6 +31,11 @@
 	background-repeat: no-repeat;
 	height: 100%;
 	width: 100%;
+}
+
+.cont .main .title{
+	margin-bottom: 0px;
+	color: var(--txtColor);
 }
 
 .credits{

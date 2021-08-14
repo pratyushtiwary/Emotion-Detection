@@ -1,13 +1,14 @@
 import styles from "../styles/components/emotions.module.css";
-import Button from "../components/Button";
+import Button from "./Button";
+
 
 export default function Emotions(props){
+
 	return (
 	  <>
         <div className={styles.imageCont}>
           <div className={styles.emoji}>
             <img
-              width = "100"
               height = "100"
               src = {"/emojis/"+props.emotion+".SVG"}
             />

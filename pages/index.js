@@ -25,11 +25,12 @@ export default function Home(props) {
     function reset(){
       setContent((
         <>
-          <h1 className={styles.pitch}>Recognise Your Emotions!</h1>
+          <h1 className={styles.title}>{props.appName}</h1>
+          <h2 className={styles.pitch}>Recognise Your Emotions!</h2>
           <Uploader
             maxSize = {5}
             onUpload = {upload}
-            accept = "image/*"
+            accept = ".jpeg,.jpg,.png"
           />
         </>
       ));
@@ -78,11 +79,12 @@ export default function Home(props) {
   useEffect(()=>{
     setContent((
       <>
-        <h1 className={styles.pitch}>Recognise Your Emotions!</h1>
+        <h1 className={styles.title}>{props.appName}</h1>
+        <h2 className={styles.pitch}>Recognise Your Emotions!</h2>
         <Uploader
           maxSize = {5}
           onUpload = {upload}
-          accept = "image/*"
+          accept = ".jpeg,.jpg,.png"
         />
       </>
     ));
