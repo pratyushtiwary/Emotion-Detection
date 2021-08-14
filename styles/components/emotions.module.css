@@ -23,11 +23,19 @@
 	z-index: 2;
 }
 
+.eTxt{
+	display: block;
+	text-align: center;
+	color: var(--txtColor);
+	width: 100%;
+}
+
 .emotion{
 	display: block;
 	font-size: 1.5rem;
 	font-weight: bold;
 	text-transform: uppercase;
+	text-align: center;
 }
 
 .angry{
@@ -58,6 +66,8 @@
 
 .reset{
 	margin-top: 20px;
+	max-width: 80%;
+	box-shadow: 0px 0px 30px var(--secondaryColor);
 }
 
 .fear{

@@ -24,11 +24,14 @@ export default function Home(props) {
     recap.recaptcha.show();
     function reset(){
       setContent((
-        <Uploader
-          maxSize = {5}
-          onUpload = {upload}
-          accept = "image/*"
-        />
+        <>
+          <h1 className={styles.pitch}>Recognise Your Emotions!</h1>
+          <Uploader
+            maxSize = {5}
+            onUpload = {upload}
+            accept = "image/*"
+          />
+        </>
       ));
     }
     recap.recaptcha.onError = ()=>{
@@ -74,11 +77,14 @@ export default function Home(props) {
 
   useEffect(()=>{
     setContent((
-      <Uploader
-        maxSize = {5}
-        onUpload = {upload}
-        accept = "image/*"
-      />
+      <>
+        <h1 className={styles.pitch}>Recognise Your Emotions!</h1>
+        <Uploader
+          maxSize = {5}
+          onUpload = {upload}
+          accept = "image/*"
+        />
+      </>
     ));
   },[])
 
@@ -89,8 +95,12 @@ export default function Home(props) {
         <title>{props.appName}</title>
       </Head>
       <recap.Recaptcha siteKey={"6LcaOPkbAAAAAENOCJCxrlSXoh5b8MWvEyZxh0NX"}/>
+      <a href="credits" className={styles.credits}>Credits</a>
       <div className={styles.cont}>
-        {content}
+        <div className={styles.side}></div>
+        <div className={styles.main}>
+          {content}
+        </div>
       </div>
     </>
   )

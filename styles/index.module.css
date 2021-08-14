@@ -1,8 +1,49 @@
 .cont{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	width: fit-content;
-	transform: translate(-50%,-50%);
-	text-align: center;
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: 0.5fr 1fr;
+	align-items: center;
+	justify-content: center;
+}
+
+.cont .main{
+	background-color: var(--secondaryColor);
+	display: grid;
+	align-content: center;
+	justify-content: center;
+	width: auto;
+	height: 100vh;
+}
+
+.cont .main .pitch{
+	color: var(--txtColor);
+	margin-bottom: 10px;
+}
+
+.cont .side{
+	position: relative;
+	background-image: url("/assets/bg.svg");
+	background-position: 50% 50%;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 100%;
+	width: 100%;
+}
+
+.credits{
+	position: fixed;
+	top: 15px;
+	right: 10px;
+	color: var(--txtColor);
+}
+
+@media screen and (max-width: 750px){
+	.cont{
+		grid-template-columns: 1fr;
+	}	
+
+	.cont .side{
+		display: none;
+	}
 }

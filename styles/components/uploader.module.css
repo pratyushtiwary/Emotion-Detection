@@ -5,6 +5,8 @@
 .uploadButton{
 	font-size: 1.5rem;
 	box-shadow: 0px 0px 30px var(--secondaryColor);
+	width: fit-content;
+	max-width: 80%;
 }
 
 .helper{
@@ -12,4 +14,5 @@
 	font-size: 0.75rem;
 	margin-top: 10px;
 	text-align: center;
+	color: var(--txtColor);
 }

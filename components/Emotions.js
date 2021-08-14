@@ -17,7 +17,7 @@ export default function Emotions(props){
            src={props.url}
           />
         </div>
-        <span>Emotion is :-</span>
+        <span className={styles.eTxt}>Emotion is :-</span>
         <span className={styles.emotion+" "+styles[props.emotion]}>{props.emotion}</span>
         <Button className={styles.reset} onClick={props.onReset}>Reset</Button>
       </>
