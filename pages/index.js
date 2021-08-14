@@ -28,7 +28,7 @@ export default function Home(props) {
           <h1 className={styles.title}>{props.appName}</h1>
           <h2 className={styles.pitch}>Recognise Your Emotions!</h2>
           <Uploader
-            maxSize = {5}
+            maxSize = {1}
             onUpload = {upload}
             accept = ".jpeg,.jpg,.png"
           />
@@ -82,7 +82,7 @@ export default function Home(props) {
         <h1 className={styles.title}>{props.appName}</h1>
         <h2 className={styles.pitch}>Recognise Your Emotions!</h2>
         <Uploader
-          maxSize = {5}
+          maxSize = {1}
           onUpload = {upload}
           accept = ".jpeg,.jpg,.png"
         />
