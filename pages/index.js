@@ -59,9 +59,13 @@ export default function Home(props) {
               snackbar.show("Some internal server error occured, Please try again later.");
             }
           }
+          else{
+            Loader.hide();
+            snackbar.show(c.data.error.msg);
+          }
         }).catch((e)=>{
           Loader.hide();
-          snackbar.show("Unable to detect face, try again with a different image");
+          snackbar.show("Some internal server error occured, Please try again later.");
         });
     }
     
