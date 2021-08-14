@@ -21,29 +21,42 @@ function Recaptcha(props){
 	let recapElem = createRef();
 
 	useEffect(()=>{
+		let s = document.createElement("script");
+		s.src = "https://www.google.com/recaptcha/api.js";
+		document.body.append(s);
 		const cont = recapElem.current;
 		let widgetId;
-		if(window.grecaptcha){
-			window.grecaptcha.ready(()=>{
-				function done(){
-					recaptcha.hide();
-					recaptcha.onVerified && recaptcha.onVerified();
-					window.grecaptcha.reset();
-				}
-				function eError(){
-					window.grecaptcha.reset();
-				}
-				function error(){
-					eError();
-				}
-				window.grecaptcha.render(cont,{
-					"sitekey": "6LcaOPkbAAAAAENOCJCxrlSXoh5b8MWvEyZxh0NX",
-					"callback": done,
-					"expired-callback": eError,
-					"error-callback": error
-				});
-			})
+		s.onload = ()=>{
+			if(window.grecaptcha){
+				window.grecaptcha.ready(()=>{
+					function done(e){
+						recaptcha.hide();
+						recaptcha.onVerified && recaptcha.onVerified(e);
+						window.grecaptcha.reset();
+					}
+					function eError(){
+						recaptcha.onError && recaptcha.onError();
+						window.grecaptcha.reset();
+					}
+					function error(){
+						recaptcha.onError && recaptcha.onError();
+						eError();
+					}
+					window.grecaptcha.render(cont,{
+						"sitekey": "6LcaOPkbAAAAAENOCJCxrlSXoh5b8MWvEyZxh0NX",
+						"callback": done,
+						"expired-callback": eError,
+						"error-callback": error
+					});
+				})
+			}
 		}
+
+		s.onerror = ()=>{
+			alert("Error loading recaptcha, reloading...");
+			window.location.reload();
+		}
+		
 	},[])
 
 	return (

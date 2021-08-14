@@ -13,7 +13,7 @@ snackbar.create = ()=>{
 	return s;
 }
 
-snackbar.autoHide = false;
+snackbar.autoHide = true;
 snackbar.outTime = 5000;
 
 snackbar.show = (msg)=>{
