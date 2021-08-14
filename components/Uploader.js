@@ -19,7 +19,7 @@ export default function Uploader(props){
 	  const elem = e.currentTarget;
 	  const file = elem.files[0];
 	  if(file.size > maxSize){
-	    snackbar.show("File size should be less than 5 M.B.");
+	    snackbar.show("File size should be less than "+props.maxSize+" M.B.");
 	  }
 	  else{
 	  	props.onUpload && props.onUpload(file);
