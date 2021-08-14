@@ -36,6 +36,7 @@
 .cont .main .title{
 	margin-bottom: 0px;
 	color: var(--txtColor);
+	text-align: center;
 }
 
 .credits{
