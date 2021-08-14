@@ -13,7 +13,7 @@ const url = "https://dry-escarpment-33044.herokuapp.com/";
 export default function Home(props) {
   
   const [content,setContent] = useState(null);
-  const emotions = ["happy","sad","neutral","disgust","surprised","angry"]
+  const emotions = ["happy","sad","neutral","disgust","surprise","angry"]
 
   function upload(file){
     let formData = new window.FormData();
