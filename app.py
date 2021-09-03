@@ -1,4 +1,4 @@
-from flask import Flask,request,url_for
+from flask import Flask,request
 import msg
 from detect import detect
 from urllib.parse import urlencode
@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 app.config['MAX_CONTENT_LENGTH'] = 5 * 1024 * 1024    # 5 Mb limit
 app.config['EXTENSIONS'] = ['jpeg','png','jpg']
-uploads_dir = "file"
+uploads_dir = "/home/emotionDetection/ed/file"
 
 @app.route("/detect",methods=["GET","POST"])
 def hi():
@@ -39,12 +39,14 @@ def hi():
 				path = os.path.join(uploads_dir, secure_filename(file.filename)) # join path, this path is where we'll save our file
 				file.save(path) # save file
 				e = detect(path) # detect emotion and delete file
-				if(e): # check if face and emotion is detected
+				if e!=0 and e!=-1: # check if face and emotion is detected
 					return msg.success({
 						"emotion": e
 					})
-				else: # if no face is detected throw error
+				elif e==0: # if no face is detected throw error
 					return msg.error("No face detected")
+				else: # if face is detected with less accuracy
+				    return msg.error("Unable to detect emotion with high accuracy")
 			else:
 				return msg.error("Invalid file type!")
 		return msg.error("Invalid Request")

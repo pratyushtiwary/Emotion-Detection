@@ -12,6 +12,8 @@ def detect(file):
 	try:
 		g = DeepFace.analyze(img_path=file,actions=["emotion"])
 		emotion = g["dominant_emotion"]
+		if int(g["emotion"][emotion]) < 50:
+		    emotion = -1
 	except:
 		emotion = 0
 	os.remove(file)
