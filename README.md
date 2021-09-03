@@ -1,6 +1,8 @@
 
 # Frontend For Emotion-Detection project
 
+To view the `backend` code change branch to `backend`
+
 Project Link :- [Emotion-Detection](https://emotion-detection-sage.vercel.app/)
 
 
