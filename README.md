@@ -5,7 +5,7 @@ To view `frontend` code switch to the `frontend` branch
 Project Link :- [Emotion-Detection](https://emotion-detection-sage.vercel.app/)
 
 
-Frontend code can be found [here](https://github.com/pratyushtiwary/Emotion-Detection)
+Frontend code can be found [here](https://github.com/pratyushtiwary/Emotion-Detection/tree/frontend)
 
 Packages used :-
 - Flask,
