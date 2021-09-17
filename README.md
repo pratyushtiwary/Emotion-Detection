@@ -6,7 +6,7 @@ To view the `backend` code change branch to `backend`
 Project Link :- [Emotion-Detection](https://emotion-detection-sage.vercel.app/)
 
 
-Backend code can be found [here](https://github.com/pratyushtiwary/edbe)
+Backend code can be found [here](https://github.com/pratyushtiwary/Emotion-Detection/tree/backend)
 
 ## Components
 
