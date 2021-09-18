@@ -12,9 +12,7 @@ Packages used :-
 - DeepFace,
 - Werkzeug
 
-to run download the above packages and open cmd/terminal in the folder and run `pip install -r requirements.txt`
-
-then run `python app.py`
+to run download the above packages and open cmd/terminal in the folder and run `python app.py`
 
 This will start a server locally on `localhost:3000`
 
